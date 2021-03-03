@@ -1,1 +1,1 @@
-"# simpleShopping" 
+"# shopping-api" 
