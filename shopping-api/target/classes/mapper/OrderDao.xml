@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.study.dao.OrderDao">
+    <resultMap id="orderDetail" type="com.study.entity.Order">
+        <id property="id" column="id"></id>
+        <result property="userId" column="user_id"></result>
+        <result property="totalPrice" column="total_price"></result>
+        <result property="number" column="number"></result>
+        <result property="createTime" column="create_time"></result>
+        <result property="addressId" column="address_id"></result>
+        <collection property="orderdetail" ofType="com.study.entity.OrderDetails">
+            <id property="id" column="did"></id>
+            <result property="orderId" column="order_id"></result>
+            <result property="goodsId" column="goods_id"></result>
+            <result property="goodsName" column="goods_name"></result>
+            <result property="goodsNumber" column="goods_number"></result>
+            <result property="goodsPrice" column="goods_price"></result>
+            <result property="goodsImag" column="goods_imag"></result>
+        </collection>
+    </resultMap>
+    <select id="getOrders" resultType="com.study.entity.Order">
+        SELECT * FROM `order`
+    </select>
+    <select id="getOrderByUid" resultMap="orderDetail" parameterType="integer">
+        SELECT  o.* ,od.id AS did,od.goods_id,od.goods_name,od.goods_number,od.goods_price,od.goods_imag
+        FROM `order` o LEFT JOIN orderdetails od ON o.id=od.order_id WHERE user_id=#{userId} order by id desc,did asc
+
+    </select>
+    <select id="gerOrderAndOrderDetails" parameterType="integer" resultMap="orderDetail">
+        SELECT o.* ,od.id AS did,od.order_id,od.goods_id,od.goods_name,od.goods_number,od.goods_price,od.goods_imag
+        FROM `order` o LEFT JOIN orderdetails od ON o.id=od.order_id WHERE o.id=#{id}
+    </select>
+
+    <insert id="saveOrder" parameterType="com.study.entity.Order" useGeneratedKeys="true" keyProperty="id">
+            INSERT INTO `order` (id,user_id,total_price,number,create_time,address_id)VALUES(#{id} ,#{userId},#{totalPrice},#{number},#{createTime},#{addressId})
+    </insert>
+
+
+</mapper>

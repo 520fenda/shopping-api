@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.study.dao.OrderDetailsDao">
+<!--<resultMap id="orderDetails" type="com.study.entity.OrderDetails">-->
+    <!---->
+<!--</resultMap>-->
+
+
+<select id="getOrderDetails" resultType="com.study.entity.OrderDetails">
+      SELECT * FROM orderdetails WHERE order_id IS NULL
+</select>
+    <select id="getOrderDetailsById" resultType="com.study.entity.OrderDetails" parameterType="integer">
+     SELECT * FROM orderdetails WHERE id=#{id}
+    </select>
+    <select id="getOrderDetailsByOid" parameterType="integer" resultType="com.study.entity.OrderDetails">
+      SELECT * FROM orderdetails WHERE order_id=#{orderId}
+    </select>
+    <insert id="saveOrderDetail" parameterType="java.util.List">
+        INSERT INTO orderdetails VALUES(NULL,#{orderId},#{goodsId},#{goodsName},#{goodsNumber},#{goodsPrice},#{goodsImag})
+    </insert>
+
+    <update id="changeoid" parameterType="com.study.entity.OrderDetails">
+        UPDATE orderdetails SET order_id=#{orderId} WHERE order_id IS NULL
+    </update>
+
+    <update id="updateod" parameterType="com.study.entity.OrderDetails">
+       UPDATE orderdetails SET order_id=#{orderId},goods_id=#{goodsId},goods_name=#{goodsName},goods_number=#{goodsNumber},
+       goods_price=#{goodsPrice},goods_imag=#{goodsImag}
+       WHERE order_id is null
+    </update>
+
+</mapper>

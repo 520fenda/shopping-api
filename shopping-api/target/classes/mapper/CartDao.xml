@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.study.dao.CartDao">
+    <select id="getCartByUid" parameterType="int" resultType="com.study.entity.Cart">
+        SELECT * FROM cart WHERE user_id=#{userId} AND flage=0
+    </select>
+
+<insert id="addCart" parameterType="com.study.entity.Cart">
+  INSERT INTO cart  VALUES(NULL,#{userId},#{goodsId},#{goodsName},#{goodsNumber},#{goodsPrice},#{goodsImag},#{flage})
+</insert>
+    <select id="getCartById" parameterType="int" resultType="com.study.entity.Cart">
+        SELECT * FROM cart WHERE id=#{id}
+    </select>
+
+
+
+    <select id="existcart" parameterType="int" resultType="com.study.entity.Cart">
+        SELECT * FROM cart WHERE user_id=#{userId} AND goods_id=#{goodsId} and  flage=0
+    </select>
+
+    <update id="updateCartNum" parameterType="com.study.entity.Cart">
+          UPDATE cart SET goods_number=#{goodsNumber} where id=#{id} and flage=0
+    </update>
+
+    <update id="deleteCart" parameterType="int">
+        UPDATE cart SET flage =1 WHERE user_id=#{userId} AND goods_id=#{goodsId}
+    </update>
+
+
+</mapper>

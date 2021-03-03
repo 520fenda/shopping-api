@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.study.dao.AddressDao">
+    <select id="getAddress" resultType="com.study.entity.Address">
+        SELECT * FROM `address`
+    </select>
+    <select id="getAddressById" resultType="com.study.entity.Address" parameterType="integer">
+        SELECT *  FROM address WHERE id=#{id}
+    </select>
+    <select id="getAddressByUid" resultType="com.study.entity.Address" parameterType="integer">
+    SELECT *  FROM address WHERE user_id=#{userId}
+    </select>
+    <insert id="addAddress" parameterType="com.study.entity.Address">
+      INSERT INTO address (id,user_id,user_name,user_phone,addr) VALUES(NULL,#{userId},#{userName},#{userPhone},#{addr})
+    </insert>
+
+    <update id="updateAddress" parameterType="com.study.entity.Address">
+        UPDATE address SET user_id=#{userId},user_name=#{userName},user_phone=#{userPhone},addr=#{addr} WHERE id=#{id}
+    </update>
+
+
+
+
+</mapper>
