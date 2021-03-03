@@ -46,3 +46,35 @@ Node >= 10
 6.npm run serve
 
 7.打开浏览器，输入：http://localhost:8086 完成
+
+##  
+
+## 演示图
+
+<table>
+    <tr>
+        <td><img src="http://520fenda.3vhost.net/78f3335c95e20c48486c2806f373ea5.png"/></td>
+        <td><img src="http://520fenda.3vhost.net/193f32bb548347ff32eed99b23e88ee.png"/></td>
+    </tr>
+    <tr>
+        <td><img src="http://520fenda.3vhost.net/e02636664fc42ca1c2e744b42fd48fd.png"/></td>
+        <td><img src="http://520fenda.3vhost.net/13f3c6764df62e41237294a8fcabea6.png"/></td>
+    </tr>
+    <tr>
+        <td><img src="http://520fenda.3vhost.net/861f36785f89e2ae6a663573713326a.png"/></td>
+        <td><img src="http://520fenda.3vhost.net/4dfe17968b6835caf8742dda35a66ce.png"/></td>
+    </tr>
+	<tr>
+        <td><img src="http://520fenda.3vhost.net/63af534b9207c7b3e791381990aaf5b.png"/></td>
+        <td><img src="http://520fenda.3vhost.net/e26de36506b60c7c8e0c80b2047512c.png"/></td>
+    </tr>	 
+    <tr>
+        <td><img src="http://520fenda.3vhost.net/5252bab229195e6460395652d70a612.png"/></td>
+        <td><img src="http://520fenda.3vhost.net/e620a74001dd28d3a1bde31b3953edc.png"/></td>
+    </tr>
+	<tr>
+        <td><img src="http://520fenda.3vhost.net/a5ffb7fe5d5c09b1e082f616ea96a03.png"/></td>
+        <td><img src="http://520fenda.3vhost.net/70f761adc588a0b53cbdc3b083bd27b.png"/></td>
+    </tr>
+    </table>
+
