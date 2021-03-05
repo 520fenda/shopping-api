@@ -77,14 +77,18 @@ Node >= 10
         <td><img src="http://520fenda.3vhost.net/70f761adc588a0b53cbdc3b083bd27b.png"/></td>
     </tr>
     </table>
-##  联系作者
+## 联系作者
 
 如有问题请联系作者：
 
 WeChat：zuishuaifenda096
 
+<table>
+    <tr>
+        <td><img src="http://520fenda.3vhost.net/wechat.jpg"/></td>
+    </tr>
+</table>
 
-       <img src="http://520fenda.3vhost.net/wechat.jpg"/>
 
 
 ​        
